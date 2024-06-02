@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <style>
+
+    body {
+        font-family: Arial, sans-serif;
+        text-align: center;
+    }
+    
+    h1 {
+        color: #333;
+    }
+    
+    input {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 10px;
+    }
+    
+    button {
+        background-color: #0074D9;
+        color: #fff;
+        border: none;
+        padding: 10px 20px;
+        cursor: pointer;
+    }
+    </style>
+    <title>Average Calculator</title>
+</head>
+<body>
+    <h1>Average Calculator</h1>
+    <label for="numbers">Enter numbers (comma-separated):</label>
+    <input type="text" id="numbers">
+    <button onclick="calculateAverage()">Calculate Average</button>
+    <p id="result"></p>
+
+    <script >
+        function calculateAverage() {
+            const inputElement = document.getElementById('numbers');
+              const resultElement = document.getElementById('result');
+        
+            const numbers = inputElement.value.split(',').map(Number);
+              const sum = numbers.reduce((acc, num) => acc + num, 0);
+            const average = sum / numbers.length;
+        
+            resultElement.textContent = `Average: ${average.toFixed(2)}`;
+        }
+        
+        
+    </script>
+</body>
+</html>
